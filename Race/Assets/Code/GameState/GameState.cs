@@ -38,7 +38,7 @@ public class GameState
     private void Reset()
     {
         IsGameActive = true;
-        _gold = 10;
+        _gold = 1000;
     }
 
     internal object GetGold()
