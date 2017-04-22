@@ -55,6 +55,12 @@ public class TerrainPlacementHandler : MonoBehaviour {
         {
             lastPlacement += new Vector3(80, 0, 0);
             nextSection.transform.position = lastPlacement;
+
+            if (UnityEngine.Random.Range(0, 1) < 0.5)
+            {
+                var middle = nextSection.transform.position + new Vector3(40,0,40);
+                nextSection.transform.RotateAround(middle, Vector3.up, 180);
+            }
         }
     }
 
