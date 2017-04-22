@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TerrainPlacementHandler : MonoBehaviour {
 
-    private static object locationLock = new object();
-
     private Vector3 _lastPlacement;
     private Vector3 lastPlacement {
         get
@@ -33,7 +31,7 @@ public class TerrainPlacementHandler : MonoBehaviour {
 		
 	}
 
-    public void PlaceTerrain(RoadSection terrain)
+    public TerrainBase GetTerrainFromRoadSection(RoadSection terrain)
     {
         TerrainBase nextSection;
         switch (terrain)
@@ -60,16 +58,31 @@ public class TerrainPlacementHandler : MonoBehaviour {
                 nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<StraightRoad>();
                 break;
         }
-        lock(locationLock)
+        return nextSection;
+    }
+    public void PlaceTerrain(RoadSection terrain)
+    {
+        var nextSection = GetTerrainFromRoadSection(terrain);
+
+        if (GameState.Instance.Gold >= nextSection.GetCost())
         {
+            Debug.LogFormat("Could buy {0}. Gold: {1}, Cost: {2}", terrain, GameState.Instance.Gold, nextSection.GetCost());
+            GameState.Instance.Gold -= nextSection.GetCost();
             lastPlacement += new Vector3(80, 0, 0);
             nextSection.transform.position = lastPlacement;
 
-            if (UnityEngine.Random.Range(0, 100) < 50)
-            {
-                var middle = nextSection.transform.position + new Vector3(40,0,40);
-                nextSection.transform.RotateAround(middle, Vector3.up, 180);
-            }
+            //if (UnityEngine.Random.Range(0, 100) < 50)
+            //{
+            //    Debug.LogFormat("Rotating {0}", terrain);
+            //    nextSection.transform.Rotate(Vector3.up, 180);
+            //    //nextSection.transform.position += new Vector3(0, 0, -80);
+            //}
+        }
+        else
+        {
+            //TODO: Error message?
+            Debug.LogFormat("Could not buy {0}. Gold: {1}, Cost: {2}", terrain, GameState.Instance.Gold, nextSection.GetCost());
+            PrefabFactory.Instance.TerrainManager.RecyclePrefab(nextSection.gameObject);
         }
     }
 

@@ -51,6 +51,7 @@ public class ManagerBase : MonoBehaviour
             _inactiveObjects = value;
         }
     }
+    public bool DisableRecycling;
     #endregion
 
     #region Get
@@ -101,11 +102,19 @@ public class ManagerBase : MonoBehaviour
     #region Recycling
     internal void RecyclePrefab(GameObject gameObject)
     {
-        //var entityGO = gameObject.gameObject;
         ActiveObjects.Remove(gameObject);
-        InactiveObjects.Add(gameObject);
-        gameObject.transform.position = Vector3.zero;
-        gameObject.SetActive(false);
+
+        if (DisableRecycling)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            InactiveObjects.Add(gameObject);
+            gameObject.transform.position = Vector3.zero;
+            gameObject.SetActive(false);
+        }
+        
     }
     #endregion
 }
