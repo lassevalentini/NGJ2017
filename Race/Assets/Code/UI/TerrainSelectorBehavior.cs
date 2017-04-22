@@ -12,6 +12,14 @@ public class TerrainSelectorBehavior : MonoBehaviour {
 	void Start () {
         Button btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+
+        var terrain = PrefabFactory.Instance.TerrainPlacementHandler.GetTerrainFromRoadSection(Terrain);
+        var cost = terrain.GetCost();
+        PrefabFactory.Instance.TerrainManager.RecyclePrefab(terrain.gameObject);
+
+
+        Text text = gameObject.GetComponentInChildren<Text>();
+        text.text += string.Format("\n${0}", cost);
     }
 	
 	// Update is called once per frame

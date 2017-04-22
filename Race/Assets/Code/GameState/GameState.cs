@@ -31,7 +31,7 @@ public class GameState
         }
     }
 
-    private int _gold = 0;
+    private int _gold = 10;
     public int Gold {
         get
         {

@@ -60,3 +60,4 @@ MonoBehaviour:
   - {fileID: 1273529597506364, guid: ffda28003fd3eda4586fb56c99bd70e2, type: 2}
   _activeObjects: []
   _inactiveObjects: []
+  DisableRecycling: 1

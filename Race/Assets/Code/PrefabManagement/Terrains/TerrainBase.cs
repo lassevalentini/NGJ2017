@@ -4,21 +4,39 @@ using System;
 
 public abstract class TerrainBase : MonoBehaviour
 {
-    protected int secondsToLive;
+    public int Cost;
+    protected int defaultCost;
+
+
+    public int SecondsToLive;
+    protected int defaultSecondsToLive;
+    private int secondsToLive
+    {
+        get
+        {
+            return SecondsToLive > 0 ? SecondsToLive : defaultSecondsToLive;
+        }
+    }
     private DateTime? liveTo;
 
 
     // Use this for initialization
-    void Start()
-    {
-        Init();
-        Debug.LogFormat("Start {0}", gameObject.name);
-        liveTo = DateTime.Now.AddSeconds(secondsToLive);
-    }
+    //void Start()
+    //{
+    //    Init();
+    //    Debug.LogFormat("Start {0}", gameObject.name);
+    //    liveTo = DateTime.Now.AddSeconds(secondsToLive);
+    //}
 
     protected virtual void Init()
     {
-        secondsToLive = 10;
+        defaultSecondsToLive = 10;
+        defaultCost = 10;
+    }
+
+    public int GetCost()
+    {
+        return Cost > 0 ? Cost : defaultCost;
     }
 
     // Update is called once per frame
@@ -35,7 +53,9 @@ public abstract class TerrainBase : MonoBehaviour
     void OnEnable()
     {
         Debug.LogFormat("Enabling {0}", gameObject.name);
-        //liveTo = DateTime.Now.AddSeconds(secondsToLive);
+        Init();
+        Debug.LogFormat("Start {0}", gameObject.name);
+        liveTo = DateTime.Now.AddSeconds(secondsToLive);
     }
 
     void OnDisable()

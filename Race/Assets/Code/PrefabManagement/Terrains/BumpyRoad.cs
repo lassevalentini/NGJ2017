@@ -8,7 +8,8 @@ public class BumpyRoad : TerrainBase
 
     protected override void Init()
     {
-        secondsToLive = 15;
+        defaultSecondsToLive = 15;
+        defaultCost = 10;
     }
 
     // Update is called once per frame
