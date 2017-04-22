@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameState
 {
@@ -50,6 +51,6 @@ public class GameState
     public static void EndGame()
     {
         Debug.Log("Game end!");
-        //UiManager.Instance
+        SceneManager.LoadScene("GameOver");
     }
 }

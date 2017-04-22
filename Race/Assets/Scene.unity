@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 113239776}
   - component: {fileID: 113239775}
   m_Layer: 5
-  m_Name: Bumpy (2)
+  m_Name: Curvy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68adffeb549f9604dbb0a8a4d5009f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Terrain: 0
+  Terrain: 5
 --- !u!114 &113239776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,7 +1831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: Splitting
 --- !u!222 &262253767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 323272905}
   - component: {fileID: 323272904}
   m_Layer: 5
-  m_Name: Bumpy (1)
+  m_Name: Splitting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2286,7 +2286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68adffeb549f9604dbb0a8a4d5009f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Terrain: 0
+  Terrain: 3
 --- !u!114 &323272905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6890,7 +6890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: Curvy
 --- !u!222 &815433815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10230,7 +10230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 6
+  m_Text: Windy
 --- !u!222 &1404786054
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11986,7 +11986,7 @@ GameObject:
   - component: {fileID: 1759417589}
   - component: {fileID: 1759417588}
   m_Layer: 5
-  m_Name: Bumpy (3)
+  m_Name: Windy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12024,7 +12024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68adffeb549f9604dbb0a8a4d5009f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Terrain: 0
+  Terrain: 4
 --- !u!114 &1759417589
 MonoBehaviour:
   m_ObjectHideFlags: 0
