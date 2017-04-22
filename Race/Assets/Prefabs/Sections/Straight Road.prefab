@@ -8145,7 +8145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0724d13f5a5f0e4408e314532443b5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 200
+  Cost: 150
   SecondsToLive: 0
 --- !u!114 &114272268270286734
 MonoBehaviour:
