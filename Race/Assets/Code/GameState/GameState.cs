@@ -27,7 +27,7 @@ public class GameState
     }
     private void Reset()
     {
-        _gold = 1000;
+        _gold = 500;
     }
 
     internal object GetGold()
