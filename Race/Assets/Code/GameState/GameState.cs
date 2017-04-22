@@ -18,8 +18,12 @@ public class GameState
             return _instance;
         }
     }
+
     public bool IsGameActive;
     public int PointsInLastGame;
+
+    private float lastPostion;
+    private DateTime lastScoreTime = DateTime.Now;
 
     public GameState()
     {
@@ -62,7 +66,8 @@ public class GameState
     public TerrainBase LastTouchedTerrain;
 
     private int _gold;
-    public int Gold {
+    public int Gold
+    {
         get
         {
             return _gold;
@@ -73,16 +78,31 @@ public class GameState
         }
     }
 
+    private int _points;
     public int GetPoints()
     {
         if (IsGameActive)
         {
-            return (int)Player.transform.position.x;
+            return _points;
         }
         else
         {
             return PointsInLastGame;
         }
+    }
+    public void UpdatePoints()
+    {
+        var d = Player.transform.position.x - lastPostion;
+        lastPostion = Player.transform.position.x;
+
+        var dt = (DateTime.Now - lastScoreTime).TotalSeconds;
+        lastScoreTime = DateTime.Now;
+
+        var speed = d / dt;
+
+        var pointsAdded = (int)Math.Pow(speed/2, 2);
+        Debug.LogFormat("Speed: {0}. Points added: {1}", speed, pointsAdded);
+        _points += pointsAdded;
     }
 
     public void EndGame()
@@ -92,4 +112,5 @@ public class GameState
         IsGameActive = false;
         SceneManager.LoadScene("GameOver");
     }
+
 }
