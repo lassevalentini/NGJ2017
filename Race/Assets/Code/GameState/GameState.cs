@@ -19,6 +19,8 @@ public class GameState
         }
     }
 
+    public int PointsInLastGame;
+
     public GameState()
     {
         Reset();
@@ -66,6 +68,7 @@ public class GameState
     public void EndGame()
     {
         Debug.Log("Game end!");
+        PointsInLastGame = GetPoints();
         Reset();
         SceneManager.LoadScene("GameOver");
     }
