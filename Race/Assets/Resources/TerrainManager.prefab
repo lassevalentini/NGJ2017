@@ -52,6 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabPool:
-  - {fileID: 1044754361476962, guid: 8f2760d700c973644ad009421a8e9681, type: 2}
+  - {fileID: 1491203912428300, guid: fb29afe03609d004dad81788e77acccb, type: 2}
+  - {fileID: 1329536142191106, guid: ab34c196acedba5498405aae17a4cc77, type: 2}
+  - {fileID: 1451800167285098, guid: 44b242d08bb413643897d47fca2eb429, type: 2}
   _activeObjects: []
   _inactiveObjects: []
