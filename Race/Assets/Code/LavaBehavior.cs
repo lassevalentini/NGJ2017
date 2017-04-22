@@ -14,12 +14,13 @@ public class LavaBehavior : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        Debug.Log(string.Format("Collision with {0}", col.gameObject));
-        if (col.gameObject.tag == "Player")
+        Debug.Log(string.Format("Trigger with lava and {0} {1}", col.gameObject.name, col.gameObject.tag));
+        if (col.gameObject.transform.parent.transform.parent.tag == "Player")
         {
             GameState.EndGame();
         }
     }
+    
 }
