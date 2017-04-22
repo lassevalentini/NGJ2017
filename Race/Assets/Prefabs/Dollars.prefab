@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b749d7359edcc89469a57c04d440f59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoneyOnPowerUp: 300
 --- !u!114 &114151378508059202
 MonoBehaviour:
   m_ObjectHideFlags: 1
