@@ -6,5 +6,7 @@ public enum RoadSection
     Straight,
     Bumpy,
     Bendy,
-
+    Splitting,
+    Windy,
+    Curvy
 }

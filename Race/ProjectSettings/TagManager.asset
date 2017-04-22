@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ConstructorCamera
   - Lava
+  - PointsDisplay
   layers:
   - Default
   - TransparentFX

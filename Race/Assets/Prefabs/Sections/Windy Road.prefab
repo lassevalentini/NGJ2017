@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 154948803984291674}
   - component: {fileID: 65639458847591976}
   - component: {fileID: 114386995321684052}
+  - component: {fileID: 114420287145377520}
   m_Layer: 0
   m_Name: Windy Road
   m_TagString: Untagged
@@ -3542,6 +3543,17 @@ MonoBehaviour:
   normaliseMin: 0
   normaliseMax: 1
   normaliseBlend: 1
+--- !u!114 &114420287145377520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273529597506364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174e1e644ec352049b8c962c31bf51b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!154 &154948803984291674
 TerrainCollider:
   m_ObjectHideFlags: 1

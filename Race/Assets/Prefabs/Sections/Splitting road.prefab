@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 154933036407264178}
   - component: {fileID: 114351005297571614}
   - component: {fileID: 65112092718872672}
+  - component: {fileID: 114192699031128488}
   m_Layer: 0
   m_Name: Splitting road
   m_TagString: Untagged
@@ -3383,6 +3384,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 80, y: 80, z: 80}
   m_Center: {x: 40, y: 0, z: 40}
+--- !u!114 &114192699031128488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266810543012066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34ee598423edcc43809ffaa50bb97af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114351005297571614
 MonoBehaviour:
   m_ObjectHideFlags: 1

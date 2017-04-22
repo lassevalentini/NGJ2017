@@ -47,6 +47,15 @@ public class TerrainPlacementHandler : MonoBehaviour {
             case RoadSection.Bumpy:
                 nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<BumpyRoad>();
                 break;
+            case RoadSection.Curvy:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<CurvyRoad>();
+                break;
+            case RoadSection.Splitting:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<SplittingRoad>();
+                break;
+            case RoadSection.Windy:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<WindyRoad>();
+                break;
             default:
                 nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<StraightRoad>();
                 break;

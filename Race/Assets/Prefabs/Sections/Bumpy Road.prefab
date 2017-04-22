@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 154763496886220226}
   - component: {fileID: 114754851067494078}
   - component: {fileID: 65727122032478204}
+  - component: {fileID: 114334039416722102}
   m_Layer: 0
   m_Name: Bumpy Road
   m_TagString: Untagged
@@ -3213,6 +3214,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 80, y: 80, z: 80}
   m_Center: {x: 40, y: 0, z: 40}
+--- !u!114 &114334039416722102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329536142191106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beed7d1774f4ace49b5c03350eb272d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114754851067494078
 MonoBehaviour:
   m_ObjectHideFlags: 1

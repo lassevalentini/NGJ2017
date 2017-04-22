@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 154649580739430722}
   - component: {fileID: 114006461742570076}
   - component: {fileID: 65546133568892232}
+  - component: {fileID: 114037642504322644}
   m_Layer: 0
   m_Name: Bendy Road
   m_TagString: Untagged
@@ -3148,6 +3149,17 @@ MonoBehaviour:
   normaliseMin: 0
   normaliseMax: 1
   normaliseBlend: 1
+--- !u!114 &114037642504322644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324701261536876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d633003a075093446a4397a6c9d405d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!154 &154649580739430722
 TerrainCollider:
   m_ObjectHideFlags: 1

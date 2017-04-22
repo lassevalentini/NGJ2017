@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 154019133358137682}
   - component: {fileID: 114076581210158186}
   - component: {fileID: 65644897633629170}
+  - component: {fileID: 114411690104436174}
   m_Layer: 0
   m_Name: Curvy Road
   m_TagString: Untagged
@@ -3202,6 +3203,17 @@ MonoBehaviour:
   normaliseMin: 0
   normaliseMax: 1
   normaliseBlend: 1
+--- !u!114 &114411690104436174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572251326074738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d6c761bfca3c844bb79464d0a7ede7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!154 &154019133358137682
 TerrainCollider:
   m_ObjectHideFlags: 1
