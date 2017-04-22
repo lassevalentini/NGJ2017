@@ -7,6 +7,7 @@ TagManager:
   - ConstructorCamera
   - Lava
   - PointsDisplay
+  - Money
   layers:
   - Default
   - TransparentFX
