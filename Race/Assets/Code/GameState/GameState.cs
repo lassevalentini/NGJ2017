@@ -18,15 +18,26 @@ public class GameState
             return _instance;
         }
     }
-
+    public bool IsGameActive;
     public int PointsInLastGame;
 
     public GameState()
     {
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         Reset();
     }
+
+    private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode loadMode)
+    {
+        if (scene.name == "Scene")
+        {
+            Reset();
+        }
+    }
+
     private void Reset()
     {
+        IsGameActive = true;
         _gold = 10;
     }
 
@@ -62,14 +73,21 @@ public class GameState
 
     public int GetPoints()
     {
-        return (int)Player.transform.position.x;
+        if (IsGameActive)
+        {
+            return (int)Player.transform.position.x;
+        }
+        else
+        {
+            return PointsInLastGame;
+        }
     }
 
     public void EndGame()
     {
         Debug.Log("Game end!");
         PointsInLastGame = GetPoints();
-        Reset();
+        IsGameActive = false;
         SceneManager.LoadScene("GameOver");
     }
 }
