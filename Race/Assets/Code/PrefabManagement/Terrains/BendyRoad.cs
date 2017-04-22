@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Straight1 : TerrainBase
+public class BendyRoad : TerrainBase
 {
 
 	// Use this for initialization

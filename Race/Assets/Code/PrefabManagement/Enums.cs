@@ -3,6 +3,8 @@ using System.Collections;
 
 public enum RoadSection
 {
-    Straight1,
+    Straight,
+    Bumpy,
+    Bendy,
 
 }
