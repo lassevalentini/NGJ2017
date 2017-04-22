@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 1028103430051960, guid: 83a8a8493105742448ad0a04688b9d32, type: 2}
   - {fileID: 1350479800890122, guid: 44b242d08bb413643897d47fca2eb429, type: 2}
   - {fileID: 1013214556908758, guid: ffda28003fd3eda4586fb56c99bd70e2, type: 2}
+  - {fileID: 1349841272617734, guid: ccb6167bc76990746b5163bfd8f5e10b, type: 2}
   _activeObjects: []
   _inactiveObjects: []
   DisableRecycling: 1

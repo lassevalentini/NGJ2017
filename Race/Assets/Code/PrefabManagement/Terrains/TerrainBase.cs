@@ -46,6 +46,10 @@ public abstract class TerrainBase : MonoBehaviour
         {
             liveTo = null;
             Debug.LogFormat("{0} shouldnt live", gameObject.name);
+
+            var explosion = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<Explosion>();
+            explosion.transform.position = transform.position + new Vector3(40, 0, 40);
+
             PrefabFactory.Instance.TerrainManager.RecyclePrefab(gameObject);
         }
     }
