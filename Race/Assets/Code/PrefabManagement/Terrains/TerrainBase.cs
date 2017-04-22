@@ -69,6 +69,7 @@ public abstract class TerrainBase : MonoBehaviour
         {
             Debug.Log(string.Format("Trigger with terrain and {0} {1}", col.gameObject.transform.parent.transform.parent.name, col.gameObject.transform.parent.transform.parent.tag));
             GameState.Instance.LastTouchedTerrain = this;
+            GameState.Instance.UpdatePoints();
             LiveTo = DateTime.Now.AddSeconds(GetSecondsToLive());
         }
     }
