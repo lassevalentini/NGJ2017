@@ -35,16 +35,21 @@ public abstract class TerrainBase : MonoBehaviour
     void OnEnable()
     {
         Debug.LogFormat("Enabling {0}", gameObject.name);
-        liveTo = DateTime.Now.AddSeconds(secondsToLive);
+        //liveTo = DateTime.Now.AddSeconds(secondsToLive);
     }
-    
 
-    void OnCollisionEnter(Collision col)
+    void OnDisable()
     {
-        Debug.Log(string.Format("Collision with terrain and {0} {1}", col.gameObject.name, col.gameObject.tag));
-        if (col.gameObject.tag == "Player")
+        liveTo = null;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log(string.Format("Trigger with terrain and {0} {1}", col.gameObject.transform.parent.transform.parent.name, col.gameObject.transform.parent.transform.parent.tag));
+        if (col.gameObject.transform.parent.transform.parent.tag == "Player" && liveTo == null)
         {
             liveTo = DateTime.Now.AddSeconds(secondsToLive);
         }
     }
+    
 }
