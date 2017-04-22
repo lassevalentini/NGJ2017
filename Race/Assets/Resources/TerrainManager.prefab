@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabPool:
-  - {fileID: 1387975257054458, guid: bcc5c8585b6343448840aede38039cae, type: 2}
+  - {fileID: 1039128910206364, guid: bcc5c8585b6343448840aede38039cae, type: 2}
   - {fileID: 1052327693739968, guid: ab34c196acedba5498405aae17a4cc77, type: 2}
   - {fileID: 1212071454567190, guid: d84ef78d243d455499b4c54247388884, type: 2}
   - {fileID: 1028103430051960, guid: 83a8a8493105742448ad0a04688b9d32, type: 2}
