@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameState
 {
@@ -16,6 +17,11 @@ public class GameState
             }
             return _instance;
         }
+    }
+
+    internal object GetGold()
+    {
+        return Gold;
     }
 
     private GameObject _player;
