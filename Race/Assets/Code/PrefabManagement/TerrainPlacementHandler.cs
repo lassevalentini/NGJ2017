@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class TerrainPlacementHandler : MonoBehaviour {
 
-    private Vector3 lastPlacement;
+    private static object locationLock = new object();
 
-	// Use this for initialization
-	void Start () {
-        lastPlacement = new Vector3(0, 0, 0);
+    private Vector3 _lastPlacement;
+    private Vector3 lastPlacement {
+        get
+        {
+            if (_lastPlacement == null)
+            {
+                _lastPlacement = new Vector3(0, 0, 0);
+            }
+            return _lastPlacement;
+        }
+        set
+        {
+            _lastPlacement = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
+        
 
     }
 	
@@ -22,16 +38,30 @@ public class TerrainPlacementHandler : MonoBehaviour {
         TerrainBase nextSection;
         switch (terrain)
         {
-            case RoadSection.Straight1:
-                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<Straight1>();
+            case RoadSection.Straight:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<StraightRoad>();
+                break;
+            case RoadSection.Bendy:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<BendyRoad>();
+                break;
+            case RoadSection.Bumpy:
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<BumpyRoad>();
                 break;
             default:
-                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<Straight1>();
+                nextSection = PrefabFactory.Instance.TerrainManager.GetPrefabFromType<StraightRoad>();
                 break;
         }
+        lock(locationLock)
+        {
+            lastPlacement += new Vector3(80, 0, 0);
+            nextSection.transform.position = lastPlacement;
 
-        nextSection.transform.position = lastPlacement + new Vector3(80, 0, 0);
-        lastPlacement = nextSection.transform.position;
+            if (UnityEngine.Random.Range(0, 1) < 0.5)
+            {
+                var middle = nextSection.transform.position + new Vector3(40,0,40);
+                nextSection.transform.RotateAround(middle, Vector3.up, 180);
+            }
+        }
     }
 
     
