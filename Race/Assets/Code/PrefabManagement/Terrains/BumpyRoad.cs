@@ -5,13 +5,16 @@ using UnityEngine;
 public class BumpyRoad : TerrainBase
 {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    protected override void Init()
+    {
+        secondsToLive = 15;
+    }
+
+    // Update is called once per frame
+    protected override void Update ()
+    {
+        base.Update();
+
+    }
 }

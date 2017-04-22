@@ -53,9 +53,7 @@ public class TerrainPlacementHandler : MonoBehaviour {
         }
         lock(locationLock)
         {
-            Debug.LogFormat("Placing new road. Last: {0}", lastPlacement);
             lastPlacement += new Vector3(80, 0, 0);
-            Debug.LogFormat("Placing new road. New: {0}", lastPlacement);
             nextSection.transform.position = lastPlacement;
         }
     }
