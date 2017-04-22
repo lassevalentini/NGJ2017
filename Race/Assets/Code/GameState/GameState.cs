@@ -19,6 +19,15 @@ public class GameState
         }
     }
 
+    public GameState()
+    {
+        Reset();
+    }
+    private void Reset()
+    {
+        _gold = 10;
+    }
+
     internal object GetGold()
     {
         return Gold;
@@ -37,7 +46,7 @@ public class GameState
         }
     }
 
-    private int _gold = 10;
+    private int _gold;
     public int Gold {
         get
         {
@@ -54,9 +63,10 @@ public class GameState
         return (int)Player.transform.position.x;
     }
 
-    public static void EndGame()
+    public void EndGame()
     {
         Debug.Log("Game end!");
+        Reset();
         SceneManager.LoadScene("GameOver");
     }
 }
