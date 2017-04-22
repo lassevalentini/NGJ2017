@@ -19,14 +19,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            if (CrossPlatformInputManager.GetButtonDown("Flip Car"))
-            {
-                var oldpos = m_Car.transform.position;
-                m_Car.transform.rotation = Quaternion.identity;
-                m_Car.transform.Rotate(0, 90, 0);
-                m_Car.transform.position = oldpos + new Vector3(0, 4, 0);
-            }
-
+            
             // pass the input to the car!
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
