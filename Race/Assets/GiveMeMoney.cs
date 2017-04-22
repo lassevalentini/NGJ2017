@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GiveMeMoney : MonoBehaviour {
 
-    public int MoneyOnPowerUp = 100;
+    private int MoneyOnPowerUp = 60;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +18,14 @@ public class GiveMeMoney : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("The player has picked up the resource!");
-        GameState.Instance.Gold += MoneyOnPowerUp;
-        Destroy(gameObject);
+        if (other.gameObject.tag == "CarBumper")
+        {
+            Debug.Log("The player has picked up the resource!");
+            Destroy(gameObject);
+            GameState.Instance.Gold += MoneyOnPowerUp;
+        }
+            
+        
+
     }
 }

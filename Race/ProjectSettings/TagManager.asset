@@ -8,6 +8,7 @@ TagManager:
   - Lava
   - PointsDisplay
   - Money
+  - CarBumper
   layers:
   - Default
   - TransparentFX
