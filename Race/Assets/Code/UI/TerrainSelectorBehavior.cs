@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TerrainSelectorBehavior : MonoBehaviour {
 
+    public KeyCode KeyCode;
 
     public RoadSection Terrain;
 
@@ -24,7 +25,10 @@ public class TerrainSelectorBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (Input.GetKeyUp(KeyCode))
+        {
+            TaskOnClick();
+        }
     }
 
     void TaskOnClick()
