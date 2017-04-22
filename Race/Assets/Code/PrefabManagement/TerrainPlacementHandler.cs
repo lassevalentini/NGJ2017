@@ -71,6 +71,16 @@ public class TerrainPlacementHandler : MonoBehaviour {
             lastPlacement += new Vector3(80, 0, 0);
             nextSection.transform.position = lastPlacement;
 
+            var allComponents = nextSection.GetComponentsInChildren<GiveMeMoney>();
+
+            foreach (var component in allComponents)
+            {
+                if (UnityEngine.Random.value < 0.7)
+                {
+                    Destroy(component.gameObject);
+                }
+            }
+
             //if (UnityEngine.Random.Range(0, 100) < 50)
             //{
             //    Debug.LogFormat("Rotating {0}", terrain);
