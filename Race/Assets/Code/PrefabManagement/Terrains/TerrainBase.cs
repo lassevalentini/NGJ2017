@@ -10,14 +10,12 @@ public abstract class TerrainBase : MonoBehaviour
 
     public int SecondsToLive;
     protected int defaultSecondsToLive;
-    private int secondsToLive
+
+    public int GetSecondsToLive()
     {
-        get
-        {
-            return SecondsToLive > 0 ? SecondsToLive : defaultSecondsToLive;
-        }
+        return SecondsToLive > 0 ? SecondsToLive : defaultSecondsToLive;
     }
-    private DateTime? liveTo;
+    public DateTime? LiveTo;
 
 
     // Use this for initialization
@@ -42,9 +40,9 @@ public abstract class TerrainBase : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (liveTo < DateTime.Now)
+        if (LiveTo < DateTime.Now || GameState.Instance.Player.transform.position.x - transform.position.x > 120)
         {
-            liveTo = null;
+            LiveTo = null;
             Debug.LogFormat("{0} shouldnt live", gameObject.name);
             PrefabFactory.Instance.TerrainManager.RecyclePrefab(gameObject);
         }
@@ -54,21 +52,20 @@ public abstract class TerrainBase : MonoBehaviour
     {
         Debug.LogFormat("Enabling {0}", gameObject.name);
         Init();
-        Debug.LogFormat("Start {0}", gameObject.name);
-        liveTo = DateTime.Now.AddSeconds(secondsToLive);
     }
 
     void OnDisable()
     {
-        liveTo = null;
+        LiveTo = null;
     }
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log(string.Format("Trigger with terrain and {0} {1}", col.gameObject.transform.parent.transform.parent.name, col.gameObject.transform.parent.transform.parent.tag));
-        if (col.gameObject.transform.parent.transform.parent.tag == "Player" && liveTo == null)
+        if (col.gameObject.transform.parent.transform.parent.tag == "Player" && LiveTo == null)
         {
-            liveTo = DateTime.Now.AddSeconds(secondsToLive);
+            Debug.Log(string.Format("Trigger with terrain and {0} {1}", col.gameObject.transform.parent.transform.parent.name, col.gameObject.transform.parent.transform.parent.tag));
+            GameState.Instance.LastTouchedTerrain = this;
+            LiveTo = DateTime.Now.AddSeconds(GetSecondsToLive());
         }
     }
     

@@ -59,6 +59,8 @@ public class GameState
         }
     }
 
+    public TerrainBase LastTouchedTerrain;
+
     private int _gold;
     public int Gold {
         get
