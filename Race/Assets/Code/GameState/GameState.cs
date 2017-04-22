@@ -92,6 +92,11 @@ public class GameState
     }
     public void UpdatePoints()
     {
+        if (lastPostion == 0)
+        {
+            lastPostion = Player.transform.position.x;
+            return;
+        }
         var d = Player.transform.position.x - lastPostion;
         lastPostion = Player.transform.position.x;
 
