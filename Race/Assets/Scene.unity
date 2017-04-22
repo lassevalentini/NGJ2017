@@ -1049,6 +1049,8 @@ GameObject:
   - component: {fileID: 193286902}
   - component: {fileID: 193286901}
   - component: {fileID: 193286899}
+  - component: {fileID: 193286903}
+  - component: {fileID: 193286900}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Lava
@@ -1088,6 +1090,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &193286900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193286898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5e6766942627542968a49e55f5ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &193286901
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1108,6 +1121,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &193286903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193286898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10000, y: 1, z: 10000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &195941039
 GameObject:
   m_ObjectHideFlags: 0
