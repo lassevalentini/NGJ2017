@@ -25,8 +25,8 @@ public class CarFlipController : MonoBehaviour
             var oldpos = m_Car.transform.position;
             m_Car.transform.rotation = Quaternion.identity;
             m_Car.transform.Rotate(0, 90, 0);
-            m_Car.transform.position = oldpos + new Vector3(0, 4, 0);
-            GameState.Instance.LastTouchedTerrain.LiveTo -= TimeSpan.FromSeconds(2);
+            m_Car.transform.position = GameState.Instance.LastTouchedTerrain.transform.position + new Vector3(3, 3, 40);
+            GameState.Instance.LastTouchedTerrain.LiveTo -= TimeSpan.FromSeconds(1);
         }
     }
 }

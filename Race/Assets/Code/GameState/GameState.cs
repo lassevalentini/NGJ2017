@@ -42,6 +42,8 @@ public class GameState
     private void Reset()
     {
         _gold = 500;
+        _points = 0;
+        lastPostion = 0;
         IsGameActive = true;
     }
 
@@ -113,6 +115,7 @@ public class GameState
     public void EndGame()
     {
         Debug.Log("Game end!");
+        UpdatePoints();
         PointsInLastGame = GetPoints();
         IsGameActive = false;
         SceneManager.LoadScene("GameOver");
